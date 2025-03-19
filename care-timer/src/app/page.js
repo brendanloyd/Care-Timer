@@ -1,95 +1,97 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// app/page.js
+import styles from "./page.module.css"; // Keep if you need module-specific styles
+import { Box, Grid2, Typography, Card, CardActionArea, CardMedia, CardContent } from "@mui/material";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Box component="main" className="app-container">
+      <Grid2
+        container
+        className="grid-container"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginInline: "auto",
+          maxWidth: "1920px",
+          height: "calc(100vh - 63.59px)",
+        }}
+      >
+        {/* Create Account Card */}
+        <Grid2
+          size={{ xs: 12, md: 4 }}
+          sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 2 }}
+        >
+          <Card className="card" sx={{ borderRadius: 3 }}>
+            <CardActionArea className="card-action">
+              <CardMedia
+                component="img"
+                src="/registerNow.png"
+                height="200"
+                alt="create account"
+              />
+              <CardContent className="card-content">
+                <Typography variant="h5" component="div">
+                  Create an Account
+                </Typography>
+                <Typography variant="body2">
+                  New to baby sitting with us? This is a great place to start. Click here to register!
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid2>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Sign In Card */}
+        <Grid2
+          size={{ xs: 12, md: 4 }}
+          sx={{ display: "flex", justifyContent: "center", alignItems: "center", paddingX: 2 }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <Card className="card" sx={{ borderRadius: 3 }}>
+            <CardActionArea className="card-action">
+              <CardMedia
+                component="img"
+                src="/signInBaby.png"
+                height="200"
+                alt="Sign in"
+              />
+              <CardContent className="card-content">
+                <Typography variant="h5" component="div">
+                  Sign In
+                </Typography>
+                <Typography variant="body2">
+                  Already got your feet wet and back for another visit? Click here to sign in!
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid2>
+
+        {/* Sign Out Card */}
+        <Grid2
+          size={{ xs: 12, md: 4 }}
+          sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 2 }}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Card className="card" sx={{ borderRadius: 3 }}>
+            <CardActionArea className="card-action">
+              <CardMedia
+                component="img"
+                src="/signOutBaby.png"
+                height="200"
+                alt="Sign out"
+              />
+              <CardContent className="card-content">
+                <Typography variant="h5" component="div">
+                  Sign Out
+                </Typography>
+                <Typography variant="body2">
+                  On your way out the door? Don’t forget to sign out before leaving!
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid2>
+      </Grid2>
+    </Box>
   );
 }
